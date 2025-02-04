@@ -1,0 +1,3 @@
+GITBRANCH=workshop/terraform
+GITURL=github.com/TomerKr1/devopshift-welcome.git
+GITUSERNAME=TomerKr1
