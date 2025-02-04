@@ -6,6 +6,17 @@ variable "region" {
   default = "us-east-1"
 }
 
+
+terraform {
+  required_providers {
+    time={
+      source="hashicorp/time"
+      version = "0.12.1"
+    }
+  }
+}
+
+
 resource "aws_security_group" "sg" {
 ingress {
     from_port   = 22
@@ -33,9 +44,15 @@ resource "aws_instance" "vm" {
   }
 }
 
+resource "time_sleep" "wait_for_ip" {
+  create_duration = "45s"  # Introduce a delay of 30 seconds
+}
+
+
 output "vm_public_ip" {
   value       = aws_instance.vm.public_ip
   description = "Public IP address of the VM"
+  depends_on = [ time_sleep.wait_for_ip]
 }
 
 # to see all the details. 
