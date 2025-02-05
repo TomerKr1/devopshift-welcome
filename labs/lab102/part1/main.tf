@@ -24,7 +24,8 @@ resource "null_resource" "check_public_ip" {
   provisioner "local-exec" {
     command = <<EOT
       if [ -z "${var.publicID}" ]; then
-        echo "ERROR: Public IP address was not assigned." >&2
+        echo "ERROR: Public IP address tomer was not assigned." >&2
+        exit 1
       fi
 
         echo "im trying again..."
@@ -34,7 +35,10 @@ resource "null_resource" "check_public_ip" {
       
     EOT
   }
-  depends_on = [aws_instance.vm]
+  /*triggers = {
+    timestamp = "${timestamp()}"
+  }
+  */
 }
 
 resource "aws_security_group" "sg" {
