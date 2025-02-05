@@ -59,3 +59,5 @@ output "vm_public_ip" {
 #aws ec2 describe-instances --instance-ids i-0919a052c41cf3309 --query "Reservations[*].Instances[*].[InstanceId, PublicIpAddress, State.Name, InstanceType, SecurityGroups[*].GroupId]" --output table
 # or 
 #aws ec2 describe-instances --filters "Name=tag:Name,Values=TomerK-vm" --output table
+
+##TEST
