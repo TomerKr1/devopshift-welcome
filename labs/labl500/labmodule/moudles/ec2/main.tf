@@ -56,7 +56,7 @@ output "vm_public_ip" {
  depends_on = [ null_resource.check_public_ip ]
 }
 
-
+                  
 resource "null_resource" "check_public_ip" {
  provisioner "local-exec" {
    command = <<EOT
