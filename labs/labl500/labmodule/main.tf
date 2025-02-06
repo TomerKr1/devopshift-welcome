@@ -3,6 +3,7 @@ module "EC2Builder_1" {
   ami = "ami-0c02fb55956c7d316"
   machinetype = "t2.micro"
   machinename ="Tomer"
+  portlist = [10,22,50,40]
 }
 
 output "print_module_ami" {
@@ -17,4 +18,10 @@ output "print_machineName" {
 }
 output "test" {
   value=module.EC2Builder_1.DockDock
+}
+output "ingress_ports" {
+  value=module.EC2Builder_1.ingress_ports
+}
+output "created_ingress_rules" {
+  value=module.EC2Builder_1.created_ingress_rules
 }

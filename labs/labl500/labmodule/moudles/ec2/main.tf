@@ -12,22 +12,31 @@ variable "machinetype" {}
 
 variable "machinename" {}
 
+variable "portlist" {
+  description = "List of ports for ingress rules"
+  type        = list(number)
+  default     = [22]  # Default to port 22 if not specified
+}
 
 resource "aws_security_group" "sg" {
- ingress {
-   from_port   = 22
-   to_port     = 22
-   protocol    = "tcp"
-   cidr_blocks = ["0.0.0.0/0"]
- }
+  // Ingress rules based on the portlist variable
+  dynamic "ingress" {
+    for_each = var.portlist
+    content {
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
 
-
- egress {
-   from_port   = 0
-   to_port     = 0
-   protocol    = "-1"
-   cidr_blocks = ["0.0.0.0/0"]
- }
+  // Egress rule (same as before)
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
 
 
@@ -73,4 +82,14 @@ output "print_machine_name" {
 }
 output "DockDock" {
   value="This is a check message"
+}
+
+output "ingress_ports" {
+  description = "The list of ports used in the ingress rules"
+  value       = var.portlist
+}
+
+output "created_ingress_rules" {
+  description = "The ingress rules created in the security group"
+  value = aws_security_group.sg.ingress
 }
