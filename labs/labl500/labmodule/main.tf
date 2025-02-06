@@ -1,4 +1,4 @@
-module "Em2Builder" {
+module "EC2Builder" {
   source = "./moudles/ec2"
   ami = "ami-0c02fb55956c7d316"
   machinetype = "t2.micro"
@@ -6,15 +6,15 @@ module "Em2Builder" {
 }
 
 output "print_module_ami" {
-  value = module.Em2Builder.print_ami
+  value = module.EC2Builder.print_ami
 }
 output "print_module_publicIP" {
-  value = module.Em2Builder.vm_public_ip
+  value = module.EC2Builder.vm_public_ip
 }
 
 output "print_machineName" {
-  value = module.Em2Builder.print_machine_name
+  value = module.EC2Builder.print_machine_name
 }
 output "test" {
-  value=module.Em2Builder.DockDock
+  value=module.EC2Builder.DockDock
 }
