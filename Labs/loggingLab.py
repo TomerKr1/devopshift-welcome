@@ -6,6 +6,20 @@ import logging.handlers
 import random
 import datetime
 
+
+'''
+basicconfig 
+   V
+   getLogger (logger)
+     V
+     handler (stdout or file)
+         V
+            formatter (json or text)
+
+'''
+
+
+
 '''
 the order of the messages
 ERROR
