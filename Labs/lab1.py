@@ -14,6 +14,13 @@ server_names = [
     "cassandra",
     "mongodb",
     "rabbitmq",
+    "kafka",    
+    "zookeeper",
+    "elasticsearch",
+    "logstash",
+    "kibana",
+    "prometheus",
+    "grafana",
 ]
 
 
