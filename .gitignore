@@ -45,4 +45,6 @@ override.tf.json
 terraform.rckeys/
 
 loggingLab.log
+.txt
+.log
 
