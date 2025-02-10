@@ -61,7 +61,7 @@ sys_handler.setFormatter(formater)  # set the formatter to the handler
 logger.addHandler(sys_handler)  # add the handler to the logger
 
 file_handler.setFormatter(formater)
-logger.addHandler(file_handler)
+logger.addHandler(file_handler)# add the handler to the logger
 
 
 
