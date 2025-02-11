@@ -1,2 +1,0 @@
-{"time": "2025-02-10 15:33:02", "module": "loggingLab", "message": "nginx The server exists."}
-{"time": "2025-02-10 15:33:02", "module": "loggingLab", "message": "The status of nginx is False"}
