@@ -1,0 +1,17 @@
+{"name": "Nginx", "online": true, "cpus": 4, "ram": 8}
+{"name": "Apache", "online": true, "cpus": 4, "ram": 8}
+{"name": "LiteSpeed", "online": true, "cpus": 4, "ram": 8}
+{"name": "Caddy", "online": true, "cpus": 2, "ram": 4}
+{"name": "Tomcat", "online": true, "cpus": 4, "ram": 8}
+{"name": "IIS", "online": true, "cpus": 4, "ram": 8}
+{"name": "Node.js", "online": true, "cpus": 2, "ram": 4}
+{"name": "Express.js", "online": true, "cpus": 2, "ram": 4}
+{"name": "Gunicorn", "online": true, "cpus": 2, "ram": 4}
+{"name": "uWSGI", "online": true, "cpus": 2, "ram": 4}
+{"name": "HAProxy", "online": true, "cpus": 4, "ram": 8}
+{"name": "Traefik", "online": true, "cpus": 4, "ram": 8}
+{"name": "OpenLiteSpeed", "online": true, "cpus": 4, "ram": 8}
+{"name": "H2O", "online": true, "cpus": 2, "ram": 4}
+{"name": "Cherokee", "online": false, "cpus": 2, "ram": 4}
+
+{"name":"choko","online":true,"cpus":10,"ram":20}

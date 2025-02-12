@@ -1,6 +1,6 @@
-from log import setup_logging
+import logging
 
-logger = setup_logging()
+logger = logging.getLogger("myapp")
 servers = {"nginX": True, "DoCkEr": False}
 
 
@@ -20,7 +20,8 @@ def get_server_status(server_name: str) -> bool:
         logger.error(f"The server name {server_name} does not exist")
 
 
-while True:
-    server_name = input("Enter server name: ").strip().lower()
-    status = get_server_status(server_name)
-    logger.info(f"Server {server_name} status is: {status}")
+def check_servers_from_terminal():
+    while True:
+        server_name = input("Enter server name: ").strip().lower()
+        status = get_server_status(server_name)
+        logger.info(f"Server {server_name} status is: {status}")
