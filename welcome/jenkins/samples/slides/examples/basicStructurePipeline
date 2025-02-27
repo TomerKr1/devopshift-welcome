@@ -9,7 +9,7 @@ pipeline {
     }
     post {
         always {
-            // Actions to take regardless of pipeline success or failure
+            // Actions to take regardless of pipeline success or failuree
         }
     }
 }
